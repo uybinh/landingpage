@@ -3,9 +3,10 @@
 {% include head.html %}
 <body>
   {% include navbar.html %}
-  <div class="container">
+  <main class="container">
     {{ content }}
-  </div>
+  </main>
+  {% include footer.html %}
   <script src="{{ "/js/app.js" | relative_url }}"></script>
 
 </body>
