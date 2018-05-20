@@ -7,6 +7,6 @@ function changeSize(){
   })
 }
 
-window.onload = changeSize();
+document.querySelectorAll(".gallery img")[0].onload = changeSize();
 window.addEventListener('resize', changeSize);
 
