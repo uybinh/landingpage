@@ -51,8 +51,8 @@ main.container {
 
 .profile > div {
   margin: auto;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   background-image: url('/images/profile-picture.jpg');
   background-size: 100% 100%;
   border-radius: 50%;
@@ -127,6 +127,11 @@ footer .container div {
     grid-template-areas:  "profile"
                           "about"
                           "contact";
+  }
+
+  .profile > div {
+    width: 100px;
+    height: 100px;
   }
 }
 
