@@ -72,7 +72,7 @@ main.container {
   border: none;
 }
 
-div.gallery > div > div {
+div.gallery > div {
   margin-bottom: 20px;
 }
 
