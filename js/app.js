@@ -7,6 +7,5 @@ function changeSize(){
   })
 }
 
-document.addEventListener("DOMContentLoaded", changeSize);
+window.onload = changeSize;
 window.addEventListener('resize', changeSize);
-
