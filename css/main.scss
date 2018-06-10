@@ -1,19 +1,54 @@
 ---
 ---
 
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
 html {
   position: relative; /* For sticky footer */
   min-height: 100%; /* For sticky footer */
 }
+
 body {
+  margin: 0;
   margin-bottom: 60px; /* For sticky footer */
-  background: none;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
 }
-/*
-main.container {
-  padding-top: 20px;
-  padding-bottom: 20px;
-} */
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.bg-dark {
+  background-color: #343a40;
+}
+
+
 
 .section {
   margin-bottom: 120px;
@@ -27,6 +62,13 @@ main.container {
   visibility: hidden;
 }
 
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 .box-shadow {
   -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.2);
@@ -36,12 +78,11 @@ main.container {
 
 .grid-wrapper {
   display: grid;
-  padding-top: 50px;
-  grid-template-columns: 250px auto;
-  grid-template-rows: auto 1fr;
-  grid-gap: 20px;
-  grid-template-areas:  "profile about"
-                        "contact about";
+  grid-template-columns: 1fr;
+  grid-row-gap: 20px;
+  grid-template-areas:  "profile"
+                        "about"
+                        "contact";
 }
 
 .grid-wrapper div:nth-child(1) {
@@ -57,9 +98,9 @@ main.container {
 }
 
 .jumbotron {
-  padding-top: 36px;
-  padding-bottom: 36px;
-  margin: 0px;
+  padding: 2rem 1rem;
+  background-color: #e9ecef;
+  border-radius: .3rem;
 }
 
 .profile {
@@ -68,8 +109,8 @@ main.container {
 
 .profile > div {
   margin: auto;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   background-image: url('/images/profile-picture.jpg');
   background-size: 100% 100%;
   border-radius: 50%;
@@ -87,6 +128,11 @@ main.container {
 
 .img-thumbnail {
   border: none;
+  padding: .25rem;
+  background-color: #fff;
+  border-radius: .25rem;
+  max-width: 100%;
+  height: auto;
 }
 
 .gallery > div {
@@ -101,9 +147,6 @@ main.container {
 .no-background {
   background: none;
 }
-
-
-
 
 
 footer {
@@ -147,19 +190,80 @@ footer {
 
 
 
-@media screen and (max-width: 990px) {
+.text-center {
+  text-align: center!important;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col-12, .col-md-6 {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+
+  .jumbotron {
+    padding: 2rem 2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .container {
+    max-width: 960px;
+  }
+
   .grid-wrapper {
-    /* display: grid; */
-    grid-template-columns: 1fr;
-    grid-row-gap: 20px;
-    grid-template-areas:  "profile"
-                          "about"
-                          "contact";
+    display: grid;
+    padding-top: 50px;
+    grid-template-columns: 250px auto;
+    grid-template-rows: auto 1fr;
+    grid-gap: 20px;
+    grid-template-areas:  "profile about"
+                          "contact about";
   }
 
   .profile > div {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
   }
 }
 
