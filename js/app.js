@@ -7,14 +7,11 @@ function changeSize(){
   })
 }
 
-function addSmoothScroll(){
-  // Select all links with hashes
+function addLinkEvents(){
   $('a[href*="#"]')
-  // Remove links that don't actually link to anything
   .not('[href="#"]')
   .not('[href="#0"]')
-  .click(function(event) {
-    // On-page links
+  .click(function(event){
     if (
       location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
       &&
@@ -43,20 +40,24 @@ function addSmoothScroll(){
         });
       }
     }
+    closeNav();
   });
 }
 
 function openNav() {
-  document.querySelector(".navbar-nav").style.width = "60vw";
+  $('.navbar-nav').toggleClass('show');
 }
 
-function closeNav() {
-  document.querySelector(".navbar-nav").style.width = "0";
+function closeNav(){
+  if ($('.navbar-nav').hasClass('show')){
+    $('.navbar-nav').toggleClass('show');
+  }
 }
+
 
 function loadMyScript(){
   changeSize();
-  addSmoothScroll();
+  addLinkEvents();
   document.querySelector('.menu-button')
           .addEventListener("click", openNav);
   document.querySelector(".navbar-nav span")
