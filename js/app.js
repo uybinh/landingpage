@@ -68,11 +68,9 @@ function autoHideNavbar(){
   }
 }
 
-
 function loadMyScript(){
   changeSize();
   addLinkEvents();
-  autoHideNavbar();
   document.querySelector('.menu-button')
           .addEventListener("click", openNav);
   document.querySelector(".navbar-nav span")
