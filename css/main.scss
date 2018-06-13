@@ -17,7 +17,6 @@ html {
 body {
   margin: 0;
   margin-bottom: 60px; /* For sticky footer */
-  // font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -75,6 +74,7 @@ a {
   line-height: 60px;
   z-index: 9;
   color: white;
+  transition: top 0.3s;
 }
 
 .navbar {
@@ -90,9 +90,10 @@ a {
 
 .navbar-brand {
   float: left;
-  padding: 0 1.5rem;
-  font-family: 'Baloo', cursive;
-  font-size: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 2rem;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 1.6rem;
 }
 
 .menu-button {

@@ -54,10 +54,25 @@ function closeNav(){
   }
 }
 
+function autoHideNavbar(){
+  let navbar = document.querySelector('.navbar');
+  let prevScrollPos = window.pageYOffset;
+  window.onscroll = function(){
+    let currScrollPos = window.pageYOffset;
+    if (currScrollPos > prevScrollPos){
+      navbar.style.top = "-60px";
+    } else {
+      navbar.style.top = "0";
+    }
+    prevScrollPos = currScrollPos;
+  }
+}
+
 
 function loadMyScript(){
   changeSize();
   addLinkEvents();
+  autoHideNavbar();
   document.querySelector('.menu-button')
           .addEventListener("click", openNav);
   document.querySelector(".navbar-nav span")
