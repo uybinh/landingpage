@@ -1,8 +1,8 @@
 function changeSize(){
-  let imgs = document.querySelectorAll(".gallery img");
-  imgs.forEach(function(img, i){
-      if (i !== 0) {
-        img.style.height = `${imgs[0].clientHeight}px`;
+  let imgs = $(".gallery img");
+  imgs.each(function(index){
+      if (index !== 0) {
+        this.style.height = `${imgs[0].clientHeight}px`;
       }
   })
 }
@@ -41,6 +41,7 @@ function addLinkEvents(){
       }
     }
     closeNav();
+    changeMenuButton();
   });
 }
 
@@ -54,28 +55,18 @@ function closeNav(){
   }
 }
 
-function autoHideNavbar(){
-  let navbar = document.querySelector('.navbar');
-  let prevScrollPos = window.pageYOffset;
-  window.onscroll = function(){
-    let currScrollPos = window.pageYOffset;
-    if (currScrollPos > prevScrollPos){
-      navbar.style.top = "-60px";
-    } else {
-      navbar.style.top = "0";
-    }
-    prevScrollPos = currScrollPos;
-  }
+function changeMenuButton(){
+  $('.menu-button').toggleClass('change');
 }
 
 function loadMyScript(){
   changeSize();
   addLinkEvents();
-  document.querySelector('.menu-button')
-          .addEventListener("click", openNav);
-  document.querySelector(".navbar-nav span")
-          .addEventListener("click", closeNav);
+  $('.menu-button').click(function(){
+    changeMenuButton();
+    openNav();
+  })
 }
 
-window.onload = loadMyScript;
-window.addEventListener('resize', changeSize);
+$(document).ready(loadMyScript);
+$(window).resize(changeSize);
