@@ -69,4 +69,5 @@ function loadMyScript(){
 }
 
 $(document).ready(loadMyScript);
+$("#tag-img").on("load", loadMyScript);;
 $(window).resize(changeSize);
